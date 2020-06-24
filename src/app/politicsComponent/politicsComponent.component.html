@@ -1,7 +1,4 @@
-<div class="component-heading">
-    <h3><strong>POLITICAL NEWS</strong></h3>
-</div>
-<hr class="component-heading-underline">
+<app-componentHeading [mainNewsType]="mainNewsType" ></app-componentHeading>
 <div class="row">
     <div class="col-md-6">
         <div *ngFor="let newsContent of newsContents1">
@@ -32,3 +29,5 @@
         </div>
     </div>
 </div>
+<span class="span-next-item-above-color span-next-item-above-width">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<hr class="hr-next-item-color hr-next-item-width">

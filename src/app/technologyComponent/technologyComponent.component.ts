@@ -23,6 +23,8 @@ export class TechnologyComponent{
     first:boolean;
     second:boolean;
     third:boolean;
+    newsType:string = 'Technology';
+    mainNewsType:string = 'Technology News';
     
     ngOnInit(){
         this.populteNews();
@@ -39,6 +41,7 @@ export class TechnologyComponent{
 
     fetchRelatedNews(newsType:string){
         this.newsDataService.retrieveNews(newsType).subscribe( response =>{
+            this.newsType = newsType;
             this.commonService.prePopulateNews(response,newsType); 
             this._initializeNews();
         },reject =>{

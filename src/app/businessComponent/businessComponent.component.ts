@@ -23,6 +23,8 @@ export class BusinessComponent implements OnInit{
     first:boolean;
     second:boolean;
     third:boolean;
+    newsType:string = 'Business';
+    mainNewsType:string = 'Business News';
 
     ngOnInit(){
         this.populteNews();
@@ -39,6 +41,7 @@ export class BusinessComponent implements OnInit{
 
     fetchRelatedNews(newsType:string){
         this.newsDataService.retrieveNews(newsType).subscribe( response =>{
+            this.newsType = newsType;
             this.commonService.prePopulateNews(response,newsType); 
             this._initializeNews();
         },reject =>{

@@ -23,6 +23,7 @@ export class PoliticsComponent{
     first:boolean;
     second:boolean;
     third:boolean;
+    mainNewsType:string = 'Politics';
     
     ngOnInit(){
         this.populteNews();
@@ -30,7 +31,7 @@ export class PoliticsComponent{
     
     populteNews(){
         this.newsDataService.retrieveNews('politics').subscribe(response =>{
-            this.commonService.prePopulateNews(response,'business'); 
+            this.commonService.prePopulateNews(response,'politics'); 
             this._initializeNews();
         },reject =>{
         

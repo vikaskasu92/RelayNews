@@ -23,6 +23,7 @@ import { PoliticsComponent } from './politicsComponent/politicsComponent.compone
 import { MostPopularComponent } from './mostPopularComponent/mostPopular.component';
 import { MovieReviewsComponent } from './movieReviewsComponent/movieReviewsComponent.component';
 import { NewsContentComponent } from './shared/components/newsContentComponent/newsContentComponent.component';
+import { ComponentHeadingComponent } from './shared/components/componentHeading/componentHeading.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { NewsContentComponent } from './shared/components/newsContentComponent/n
     PoliticsComponent,
     MostPopularComponent,
     MovieReviewsComponent,
-    NewsContentComponent
+    NewsContentComponent,
+    ComponentHeadingComponent
   ],
   imports: [
     BrowserModule,

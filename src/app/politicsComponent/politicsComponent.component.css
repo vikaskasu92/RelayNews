@@ -5,11 +5,18 @@
     margin-bottom: 10px;
 }
 
+.component-main-heading{
+    font-size: 30px;
+}
+
 .component-heading-underline{
     height: 5px;
     color: #FCB700;
 }
 
+.hr-line-color{
+    background-color: #FCB700;
+}
 
 .bread-crumbs-whole{
     margin:20px;
@@ -29,4 +36,28 @@
 
 .text-center{
     text-align: center;
+}
+
+.hr-line-color{
+    background-color: #FCB700;
+}
+
+.hr-next-item-color{
+    background-color: #737373;
+}
+
+.span-next-item-above-color{
+    background-color: #2176B6;
+}
+
+.span-next-item-above-width{
+    margin-left: 84px;
+    margin-bottom: 0px;
+    height: 2px;
+    width: 15vw;
+}
+
+.hr-next-item-width{
+    margin-top: 0px;
+    width: 87vw;
 }
