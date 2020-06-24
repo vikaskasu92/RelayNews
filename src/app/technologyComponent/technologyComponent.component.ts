@@ -37,7 +37,7 @@ export class TechnologyComponent{
         });
     }
 
-    fetchTechnologyNews(newsType:string){
+    fetchRelatedNews(newsType:string){
         this.newsDataService.retrieveNews(newsType).subscribe( response =>{
             this.commonService.prePopulateNews(response,newsType); 
             this._initializeNews();

@@ -16,7 +16,6 @@ export class CommonService{
     third:boolean;
 
     prePopulateNews(response:any,newsType:string){
-        console.log(response);
         this.even = true;
         this.odd = true;
         this.first = true;
