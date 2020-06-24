@@ -3,7 +3,7 @@ import { NewsDataService } from '../shared/newsData.service';
 import { NewsContent } from '../shared/models/newsContent.model';
 import { CommonService } from '../shared/common.service';
 import { LoadingDialog } from '../shared/dialogs/loadingDialog/loadingDialog.component';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector:'app-businessComponent',
@@ -13,7 +13,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class BusinessComponent implements OnInit{
 
     constructor(private newsDataService:NewsDataService,
-                private commonService:CommonService){}
+                private commonService:CommonService,
+                private matDialog:MatDialog){}
 
     newsContents1:NewsContent[];
     newsContents2:NewsContent[];
@@ -36,7 +37,7 @@ export class BusinessComponent implements OnInit{
     }
 
     loadingSpinner(){
-        this.dialogRef = this.commonService.openDialog(LoadingDialog);
+        this.dialogRef = this.commonService.openDialog(this.matDialog,LoadingDialog,null);
     }
 
     populteNews(){
@@ -53,7 +54,11 @@ export class BusinessComponent implements OnInit{
     fetchRelatedNews(newsType:string){
         this.loadingSpinner();
         this.newsDataService.retrieveNews(newsType).subscribe( response =>{
-            this.newsType = newsType;
+            if(newsType === "realestate"){
+                this.newsType = "Real Estate";
+            }else{
+                this.newsType = newsType;
+            }
             this.commonService.prePopulateNews(response,newsType); 
             this._initializeNews();
             this.dialogRef.close();

@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { CommonService } from '../../common.service';
+import { MoreNewsDialog } from '../../dialogs/moreNewsDialog/moreNewsDialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector:'app-newsContentComponent',
@@ -6,6 +9,9 @@ import { Component, Input } from '@angular/core';
     styleUrls:['./newsContentComponent.component.css']
 })
 export class NewsContentComponent{
+
+    constructor(private commonService:CommonService,
+                private matDialog:MatDialog,){}
 
     @Input() image:string;
     @Input() title:string;
@@ -22,6 +28,11 @@ export class NewsContentComponent{
     openMoreInfo(event:any){
         event.preventDefault();
         window.open(this.moreInfo);
+    }
+
+    openMoreInfoOnDialog(){
+        const data = {};
+        const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
     }
 
 }

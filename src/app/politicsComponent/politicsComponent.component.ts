@@ -3,7 +3,7 @@ import { NewsDataService } from '../shared/newsData.service';
 import { CommonService } from '../shared/common.service';
 import { NewsContent } from '../shared/models/newsContent.model';
 import { LoadingDialog } from '../shared/dialogs/loadingDialog/loadingDialog.component';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector:'app-politicsComponent',
@@ -13,7 +13,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class PoliticsComponent{
 
     constructor(private newsDataService:NewsDataService,
-        private commonService:CommonService){}
+        private commonService:CommonService,
+        private matDialog:MatDialog){}
 
     newsContents1:NewsContent[];
     newsContents2:NewsContent[];
@@ -35,7 +36,7 @@ export class PoliticsComponent{
     }
 
     loadingSpinner(){
-        this.dialogRef = this.commonService.openDialog(LoadingDialog);
+        this.dialogRef = this.commonService.openDialog(this.matDialog,LoadingDialog,null);
     }
     
     populteNews(){

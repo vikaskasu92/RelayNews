@@ -40,8 +40,12 @@ export class CommonService{
         this._populatedMostWatched5(response.results[4]);
     }
 
-    openDialog(dialogName:any){
-        return this.dialog.open(dialogName);
+    openDialog(dialog:MatDialog,component:any,data:any){
+        const dialogRef = dialog.open(component, {
+            disableClose: true,
+            data:data
+        });
+        return dialogRef;
     }
 
     private _populateNews(response:any,newsType:string,i:number,newsResponse:NewsContent){

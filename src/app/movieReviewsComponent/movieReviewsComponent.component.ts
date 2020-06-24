@@ -10,6 +10,8 @@ export class MovieReviewsComponent implements OnInit{
 
     constructor(private newsDataService:NewsDataService){}
 
+    mainNewsType:string = "Movie Reviews";
+
     ngOnInit(){
         this.newsDataService.retrieveMovieReviews('drama').subscribe(response =>{
             console.log(response);

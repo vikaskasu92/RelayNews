@@ -27,6 +27,7 @@ import { NewsContentComponent } from './shared/components/newsContentComponent/n
 import { ComponentHeadingComponent } from './shared/components/componentHeading/componentHeading.component';
 import { MostViewedComponent } from './shared/components/mostViewedComponent/mostViewedComponent.component';
 import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.component';
+import { MoreNewsDialog } from './shared/dialogs/moreNewsDialog/moreNewsDialog.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.comp
     NewsContentComponent,
     ComponentHeadingComponent,
     MostViewedComponent,
-    LoadingDialog
+    LoadingDialog,
+    MoreNewsDialog
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.comp
   providers: [],
   bootstrap: [AppComponent],
   entryComponents:[
-    LoadingDialog
+    LoadingDialog,
+    MoreNewsDialog
   ]
 })
 export class AppModule { }

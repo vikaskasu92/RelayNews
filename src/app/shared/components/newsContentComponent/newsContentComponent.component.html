@@ -1,7 +1,7 @@
 <mat-card [ngClass]="{'mat-card-small-design': miniMiddleRightCard, 'mat-card-design' : majorCard, 'mat-card-small-left-design' : miniLeftCard, 'mat-card-small-right-design' : miniRightCard, 'mat-card-small-middle-design' : miniMiddleCard}">
-    <img mat-card-image [ngClass]="{'tiny-picture': miniCard, 'picture' : majorCard}" src="{{ image }}" alt="News Image from NYT">
+    <img mat-card-image [ngClass]="{'tiny-picture': miniCard, 'picture' : majorCard}" src="{{ image }}" alt="News Image from NYT" (click)="openMoreInfoOnDialog()">
     <mat-card-content>
-      <p>
+      <p class="news-title" (click)="openMoreInfoOnDialog()">
         <strong>{{ title }}</strong>
       </p>
     </mat-card-content>

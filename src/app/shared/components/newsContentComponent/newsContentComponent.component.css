@@ -30,9 +30,21 @@
     max-height: 345px;
 }
 
+.picture:hover{
+    cursor: pointer;
+}
+
+.news-title:hover{
+    cursor: pointer;
+}
+
 .tiny-picture{
     max-height: 230px;
     min-height: 230px;
+}
+
+.tiny-picture:hover{
+    cursor: pointer;
 }
 
 .author-color{
