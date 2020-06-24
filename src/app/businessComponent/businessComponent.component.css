@@ -1,0 +1,31 @@
+.component-heading{
+    color: #002F6D;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.component-heading-underline{
+    height: 5px;
+    color: #FCB700;
+}
+
+.bread-crumbs-whole{
+    margin:20px;
+    margin-bottom:40px;
+}
+
+.bread-crumb{
+    margin-right:15px;
+    margin-left:15px;
+    color: #002F6C;
+}
+
+.bread-crumb:hover{
+    color: #FCB700;
+    cursor: pointer;
+}
+
+.text-center{
+    text-align: center;
+}

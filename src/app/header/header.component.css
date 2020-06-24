@@ -1,0 +1,37 @@
+.main-nav-background{
+    background-color: #005594;
+}
+
+.logo{
+    width: 11vw;
+    height: 50px;
+    margin-right: -25px;
+    margin-left: -25px;
+}
+
+.push{
+    flex-grow: 1;
+}
+
+.search-icon{
+    margin-right:50px;
+    cursor: pointer;
+}
+
+.header-content-1st-button{
+    padding-left:16px;
+}
+
+.header-content-text{
+    color: white;
+}
+
+.mat-menu-content{
+    color: #3F51B5;
+    border-bottom: 1px solid #DEDEDE;
+    cursor: pointer;
+}
+
+.mat-menu-content:hover {
+    background-color: #DEDEDE;
+}

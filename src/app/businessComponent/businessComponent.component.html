@@ -1,0 +1,37 @@
+<div class="component-heading">
+    <h3><strong>BUSINESS NEWS</strong></h3>
+</div>
+<hr class="component-heading-underline">
+<div class="row bread-crumbs-whole justify-content-md-center">
+    <span class="text-center"><span class="bread-crumb" (click)="fetchBusinessNews('world')"><strong>WORLD</strong></span> | <span class="bread-crumb" (click)="fetchBusinessNews('health')"><strong>HEALTH</strong></span> | <span class="bread-crumb" (click)="fetchBusinessNews('travel')"><strong>TRAVEL</strong></span> | <span class="bread-crumb" (click)="fetchBusinessNews('realestate')"><strong>REAL ESTATE</strong></span> | <span class="bread-crumb" (click)="fetchBusinessNews('sports')"><strong>SPORTS</strong></span> | <span class="bread-crumb" (click)="fetchBusinessNews('fashion')"><strong>FASHION</strong></span> | <span class="bread-crumb" (click)="fetchBusinessNews('insider')"><strong>INSIDER</strong></span></span>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div *ngFor="let newsContent of newsContents1">
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [majorCard]=true></app-newsContentComponent>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div *ngFor="let newsContent of newsContents2">
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [majorCard]=true></app-newsContentComponent>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div *ngFor="let newsContent of moreNewsContents1">
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniLeftCard]=true></app-newsContentComponent>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div *ngFor="let newsContent of moreNewsContents2">
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniMiddleCard]=true></app-newsContentComponent>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div *ngFor="let newsContent of moreNewsContents3">
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniRightCard]=true></app-newsContentComponent>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.mat-card-design {
+    max-width: 550px;
+    margin-left:40px;
+    max-height: 482px;
+}
+
+.mat-card-small-middle-design{
+    max-width: 350px;
+    margin-left:30px;
+    max-height: 482px;
+}
+
+.mat-card-small-right-design{
+    max-width: 350px;
+    margin-right:80px;
+    max-height: 482px;
+}
+
+.mat-card-small-left-design{
+    max-width: 350px;
+    margin-left:80px;
+    max-height: 482px;
+}
+
+.picture{
+    max-height: 367px;
+}
+
+.author-color{
+    color:#2068A0;
+}
+
+.time-color{
+    color:#737373;
+}
+
+.time-space{
+    padding-left: 15px;
+}
+
+.more-info-space{
+    padding-right: 20px;
+}
+
+.mat-content-last-row{
+    margin-top:10px;
+}
+
+.push{
+    flex-grow: 1;
+}

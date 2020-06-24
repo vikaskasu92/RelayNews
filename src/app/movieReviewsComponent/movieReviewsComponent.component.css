@@ -1,0 +1,11 @@
+.component-heading{
+    color: #002F6D;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.component-heading-underline{
+    height: 5px;
+    color: #FCB700;
+}
