@@ -14,4 +14,8 @@ export class NewsDataService{
         return this.http.get<any>("https://api.nytimes.com/svc/topstories/v2/"+newsType+".json?api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
     }
 
+    retrieveMostViewedNews(){
+        return this.http.get<any>("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
+    }
+
 }

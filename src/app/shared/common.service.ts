@@ -14,6 +14,11 @@ export class CommonService{
     first:boolean;
     second:boolean;
     third:boolean;
+    mostWatched1:string;
+    mostWatched2:string;
+    mostWatched3:string;
+    mostWatched4:string;
+    mostWatched5:string;
 
     prePopulateNews(response:any,newsType:string){
         this.even = true;
@@ -32,8 +37,17 @@ export class CommonService{
         }  
     }
 
+    populateMostWatchedNews(response:any){
+            this.mostWatched1 = response.results[0].title;
+            this.mostWatched2 = response.results[1].title;
+            this.mostWatched3 = response.results[2].title;
+            this.mostWatched4 = response.results[3].title;
+            this.mostWatched5 = response.results[4].title;
+    }
+
     private _populateNews(response:any,newsType:string,i:number,newsResponse:NewsContent){
-        if(response.results[i].section === newsType && response.results[i].multimedia != null){
+        console.log(response);
+        if((response.results[i].section === newsType || response.results[i].subsection === newsType )&& response.results[i].multimedia != null){
             newsResponse.title = response.results[i].title;
             newsResponse.author = response.results[i].byline.substring(2);
             newsResponse.photo = response.results[i].multimedia[0].url;

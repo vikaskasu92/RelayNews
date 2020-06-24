@@ -24,6 +24,7 @@ import { MostPopularComponent } from './mostPopularComponent/mostPopular.compone
 import { MovieReviewsComponent } from './movieReviewsComponent/movieReviewsComponent.component';
 import { NewsContentComponent } from './shared/components/newsContentComponent/newsContentComponent.component';
 import { ComponentHeadingComponent } from './shared/components/componentHeading/componentHeading.component';
+import { MostViewedComponent } from './shared/components/mostViewedComponent/mostViewedComponent.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ComponentHeadingComponent } from './shared/components/componentHeading/
     MostPopularComponent,
     MovieReviewsComponent,
     NewsContentComponent,
-    ComponentHeadingComponent
+    ComponentHeadingComponent,
+    MostViewedComponent
   ],
   imports: [
     BrowserModule,

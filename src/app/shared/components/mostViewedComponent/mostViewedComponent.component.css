@@ -1,0 +1,35 @@
+.most-viewed{
+    font-size: 30px;
+    margin-left:84px;
+    color:#002F6C;
+}
+
+.most-viewed-content{
+    border-left: 6px solid #F3F5F7;
+}
+
+.most-viewwd-number-one{
+    margin-right: -10px;
+}
+
+.most-viewed-spacing{
+    margin-bottom:20px;
+}
+
+.most-viewed-numbers{
+    padding-top: 15px;
+    font-size: 40px;
+    color: #D0D8E2;
+}
+
+.most-viewed-content-text{
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:#000000;
+}
+
+.most-viewed-content-text:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
