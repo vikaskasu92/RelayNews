@@ -33,3 +33,24 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+
+.hr-next-item-color{
+    background-color: #737373;
+}
+
+.span-next-item-above-color{
+    background-color: #FCB700;
+}
+
+.span-next-item-above-width{
+    margin-left: 84px;
+    margin-bottom: 0px;
+    height: 2px;
+    width: 15vw;
+}
+
+.hr-next-item-width{
+    margin-top: 0px;
+    width: 87vw;
+}

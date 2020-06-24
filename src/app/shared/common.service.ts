@@ -14,23 +14,14 @@ export class CommonService{
     first:boolean;
     second:boolean;
     third:boolean;
-    mostWatched1:string;
-    mostWatched2:string;
-    mostWatched3:string;
-    mostWatched4:string;
-    mostWatched5:string;
+    mostWatched1:string[];
+    mostWatched2:string[];
+    mostWatched3:string[];
+    mostWatched4:string[];
+    mostWatched5:string[];
 
     prePopulateNews(response:any,newsType:string){
-        this.even = true;
-        this.odd = true;
-        this.first = true;
-        this.second = false;
-        this.third = false;
-        this.newsContents1 = [];
-        this.newsContents2 = [];
-        this.moreNewsContents1 = [];
-        this.moreNewsContents2 = [];
-        this.moreNewsContents3 = [];
+        this._initiatePrePopulateNews();
         for(let i=0; i<response.results.length; i++){
             const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:''};
             this._populateNews(response,newsType,i,newsResponse);
@@ -38,11 +29,12 @@ export class CommonService{
     }
 
     populateMostWatchedNews(response:any){
-            this.mostWatched1 = response.results[0].title;
-            this.mostWatched2 = response.results[1].title;
-            this.mostWatched3 = response.results[2].title;
-            this.mostWatched4 = response.results[3].title;
-            this.mostWatched5 = response.results[4].title;
+        this._initiateMostWatchedArray();
+        this._populatedMostWatched1(response.results[0]);
+        this._populatedMostWatched2(response.results[1]);
+        this._populatedMostWatched3(response.results[2]);
+        this._populatedMostWatched4(response.results[3]);
+        this._populatedMostWatched5(response.results[4]);
     }
 
     private _populateNews(response:any,newsType:string,i:number,newsResponse:NewsContent){
@@ -54,7 +46,6 @@ export class CommonService{
             newsResponse.time = response.results[i].created_date.substring(0,10);
             newsResponse.url = response.results[i].short_url;
             this._pushToArrays(newsResponse);
-            
         }
     }
 
@@ -84,6 +75,67 @@ export class CommonService{
             this.first = true;
             this.third = false;
         }
+    }
+
+    private _initiatePrePopulateNews(){
+        this.even = true;
+        this.odd = true;
+        this.first = true;
+        this.second = false;
+        this.third = false;
+        this.newsContents1 = [];
+        this.newsContents2 = [];
+        this.moreNewsContents1 = [];
+        this.moreNewsContents2 = [];
+        this.moreNewsContents3 = [];
+    }
+
+    private _initiateMostWatchedArray(){
+        this.mostWatched1 = [];
+        this.mostWatched2 = [];
+        this.mostWatched3 = [];
+        this.mostWatched4 = [];
+        this.mostWatched5 = [];
+    }
+
+    private _populatedMostWatched1(response:NewsContent){
+        this.mostWatched1.push(response.title);
+        this.mostWatched1.push(response.author);
+        this.mostWatched1.push(response.photo);
+        this.mostWatched1.push(response.time);
+        this.mostWatched1.push(response.url);
+    }
+
+    private _populatedMostWatched2(response:NewsContent){
+        this.mostWatched2.push(response.title);
+        this.mostWatched2.push(response.author);
+        this.mostWatched2.push(response.photo);
+        this.mostWatched2.push(response.time);
+        this.mostWatched2.push(response.url);
+    }
+
+    private _populatedMostWatched3(response:NewsContent){
+        this.mostWatched3.push(response.title);
+        this.mostWatched3.push(response.author);
+        this.mostWatched3.push(response.photo);
+        this.mostWatched3.push(response.time);
+        this.mostWatched3.push(response.url);
+    }
+
+    private _populatedMostWatched4(response:NewsContent){
+        this.mostWatched4.push(response.title);
+        this.mostWatched4.push(response.author);
+        this.mostWatched4.push(response.photo);
+        this.mostWatched4.push(response.time);
+        this.mostWatched4.push(response.url);
+    }
+
+    private _populatedMostWatched5(response:NewsContent){
+        this.mostWatched5.push(response.title);
+        this.mostWatched5.push(response.author);
+        this.mostWatched5.push(response.photo);
+        this.mostWatched5.push(response.time);
+        this.mostWatched5.push(response.url);
     }
 
 

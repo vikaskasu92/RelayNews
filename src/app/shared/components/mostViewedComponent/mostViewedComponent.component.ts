@@ -25,11 +25,11 @@ export class MostViewedComponent implements OnInit{
     retrieveMostWatchedNews(){
         this.newsDataService.retrieveMostViewedNews().subscribe( response =>{
             this.commonService.populateMostWatchedNews(response);
-            this.mostWatched1 = this.commonService.mostWatched1;
-            this.mostWatched2 = this.commonService.mostWatched2;
-            this.mostWatched3 = this.commonService.mostWatched3;
-            this.mostWatched4 = this.commonService.mostWatched4;
-            this.mostWatched5 = this.commonService.mostWatched5;
+            this.mostWatched1 = this.commonService.mostWatched1[0];
+            this.mostWatched2 = this.commonService.mostWatched2[0];
+            this.mostWatched3 = this.commonService.mostWatched3[0];
+            this.mostWatched4 = this.commonService.mostWatched4[0];
+            this.mostWatched5 = this.commonService.mostWatched5[0];
         },reject =>{
 
         });
