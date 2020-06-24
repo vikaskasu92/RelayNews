@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NewsDataService } from '../shared/newsData.service';
 import { NewsContent } from '../shared/models/newsContent.model';
 import { CommonService } from '../shared/common.service';
+import { LoadingDialog } from '../shared/dialogs/loadingDialog/loadingDialog.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
     selector:'app-businessComponent',
@@ -25,25 +27,36 @@ export class BusinessComponent implements OnInit{
     third:boolean;
     newsType:string = 'Business';
     mainNewsType:string = 'Business News';
+    dialogRef: MatDialogRef<unknown, any>;
+    showMostViewed:boolean = false;
 
     ngOnInit(){
+        this.loadingSpinner();
         this.populteNews();
+    }
+
+    loadingSpinner(){
+        this.dialogRef = this.commonService.openDialog(LoadingDialog);
     }
 
     populteNews(){
         this.newsDataService.retrieveNews('business').subscribe(response =>{
             this.commonService.prePopulateNews(response,'business'); 
             this._initializeNews();
+            this.showMostViewed = true;
+            this.dialogRef.close();
         },reject =>{
 
         });
     }
 
     fetchRelatedNews(newsType:string){
+        this.loadingSpinner();
         this.newsDataService.retrieveNews(newsType).subscribe( response =>{
             this.newsType = newsType;
             this.commonService.prePopulateNews(response,newsType); 
             this._initializeNews();
+            this.dialogRef.close();
         },reject =>{
 
         });

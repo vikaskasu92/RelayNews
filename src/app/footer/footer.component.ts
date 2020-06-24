@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent{
 
+    openNYTDeveloperSite(event:any){
+        event.preventDefault();
+        window.open("https://developer.nytimes.com");
+    }
+   
+
 }

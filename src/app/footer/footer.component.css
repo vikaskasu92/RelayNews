@@ -6,6 +6,44 @@
     color: white;
 }
 
+.footer-content-top-padding{
+    padding-top:15px;
+}
+
 .content-height{
     min-height: 300px;
+}
+
+.footer-margin{
+    margin:20px;
+}
+
+.application-title{
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.logo{
+    width: 11vw;
+    height: 50px;
+    margin-right: -25px;
+    margin-left: -25px;
+}
+
+.footer-logo-below-hr{
+    width: 95vw;
+    background-color: silver;
+}
+
+.push{
+    flex-grow: 1;
+}
+
+.disclaimer{
+    margin-left: 31px;
+    font-size: 10px;
+}
+
+.nyt-logo:hover{
+    cursor: pointer;
 }

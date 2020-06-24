@@ -12,6 +12,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -25,6 +26,7 @@ import { MovieReviewsComponent } from './movieReviewsComponent/movieReviewsCompo
 import { NewsContentComponent } from './shared/components/newsContentComponent/newsContentComponent.component';
 import { ComponentHeadingComponent } from './shared/components/componentHeading/componentHeading.component';
 import { MostViewedComponent } from './shared/components/mostViewedComponent/mostViewedComponent.component';
+import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.component';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { MostViewedComponent } from './shared/components/mostViewedComponent/mos
     MovieReviewsComponent,
     NewsContentComponent,
     ComponentHeadingComponent,
-    MostViewedComponent
+    MostViewedComponent,
+    LoadingDialog
   ],
   imports: [
     BrowserModule,
@@ -53,9 +56,13 @@ import { MostViewedComponent } from './shared/components/mostViewedComponent/mos
     MatToolbarModule,
     MatInputModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    LoadingDialog
+  ]
 })
 export class AppModule { }

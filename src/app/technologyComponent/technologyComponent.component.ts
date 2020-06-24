@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NewsDataService } from '../shared/newsData.service';
 import { CommonService } from '../shared/common.service';
 import { NewsContent } from '../shared/models/newsContent.model';
+import { LoadingDialog } from '../shared/dialogs/loadingDialog/loadingDialog.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
     selector:'app-technologyComponent',
@@ -25,25 +27,36 @@ export class TechnologyComponent{
     third:boolean;
     newsType:string = 'Technology';
     mainNewsType:string = 'Technology News';
-    
+    dialogRef: MatDialogRef<unknown, any>;
+    showMostViewed:boolean = false;    
+
     ngOnInit(){
+        this.loadingSpinner();
         this.populteNews();
+    }
+
+    loadingSpinner(){
+        this.dialogRef = this.commonService.openDialog(LoadingDialog);
     }
 
     populteNews(){
         this.newsDataService.retrieveNews('technology').subscribe(response =>{
             this.commonService.prePopulateNews(response,'technology'); 
             this._initializeNews();
+            this.showMostViewed = true;
+            this.dialogRef.close();
         },reject =>{
 
         });
     }
 
     fetchRelatedNews(newsType:string){
+        this.loadingSpinner();
         this.newsDataService.retrieveNews(newsType).subscribe( response =>{
             this.newsType = newsType;
             this.commonService.prePopulateNews(response,newsType); 
             this._initializeNews();
+            this.dialogRef.close();
         },reject =>{
 
         });

@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { NewsContent } from './models/newsContent.model';
+import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({providedIn:'root'})
 export class CommonService{
+
+    constructor(public dialog: MatDialog){}
 
     newsContents1:NewsContent[];
     newsContents2:NewsContent[];
@@ -37,8 +40,11 @@ export class CommonService{
         this._populatedMostWatched5(response.results[4]);
     }
 
+    openDialog(dialogName:any){
+        return this.dialog.open(dialogName);
+    }
+
     private _populateNews(response:any,newsType:string,i:number,newsResponse:NewsContent){
-        console.log(response);
         if((response.results[i].section === newsType || response.results[i].subsection === newsType )&& response.results[i].multimedia != null){
             newsResponse.title = response.results[i].title;
             newsResponse.author = response.results[i].byline.substring(2);

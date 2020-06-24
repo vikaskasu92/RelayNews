@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NewsDataService } from '../shared/newsData.service';
 import { CommonService } from '../shared/common.service';
 import { NewsContent } from '../shared/models/newsContent.model';
+import { LoadingDialog } from '../shared/dialogs/loadingDialog/loadingDialog.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
     selector:'app-politicsComponent',
@@ -24,15 +26,24 @@ export class PoliticsComponent{
     second:boolean;
     third:boolean;
     mainNewsType:string = 'Politics';
+    dialogRef: MatDialogRef<unknown, any>;
+    showMostViewed:boolean = false;
     
     ngOnInit(){
+        this.loadingSpinner();
         this.populteNews();
+    }
+
+    loadingSpinner(){
+        this.dialogRef = this.commonService.openDialog(LoadingDialog);
     }
     
     populteNews(){
         this.newsDataService.retrieveNews('politics').subscribe(response =>{
             this.commonService.prePopulateNews(response,'politics'); 
             this._initializeNews();
+            this.showMostViewed = true;
+            this.dialogRef.close();
         },reject =>{
         
         });
