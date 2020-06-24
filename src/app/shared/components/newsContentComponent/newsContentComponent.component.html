@@ -1,5 +1,5 @@
 <mat-card [ngClass]="{'mat-card-small-design': miniMiddleRightCard, 'mat-card-design' : majorCard, 'mat-card-small-left-design' : miniLeftCard, 'mat-card-small-right-design' : miniRightCard, 'mat-card-small-middle-design' : miniMiddleCard}">
-    <img mat-card-image class="picture" src="{{ image }}" alt="Photo of a Shiba Inu">
+    <img mat-card-image [ngClass]="{'tiny-picture': miniCard, 'picture' : majorCard}" src="{{ image }}" alt="News Image from NYT">
     <mat-card-content>
       <p>
         <strong>{{ title }}</strong>
@@ -10,7 +10,7 @@
         <div class="row mat-content-last-row">
             <span class="time-color time-space">{{ time }}</span>
             <div class="push"></div>
-            <a href="#" (click)="openMoreInfo()" class="more-info-space">More Info</a>
+            <a href="#" (click)="openMoreInfo($event)" class="more-info-space">More Info</a>
         </div>
     </mat-card-actions>
   </mat-card>

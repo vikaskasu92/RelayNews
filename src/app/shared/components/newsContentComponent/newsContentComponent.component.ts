@@ -17,8 +17,10 @@ export class NewsContentComponent{
     @Input() miniLeftCard:boolean;
     @Input() miniMiddleCard:boolean;
     @Input() miniRightCard:boolean;
+    @Input() miniCard:boolean;
 
-    openMoreInfo(){
+    openMoreInfo(event:any){
+        event.preventDefault();
         window.open(this.moreInfo);
     }
 

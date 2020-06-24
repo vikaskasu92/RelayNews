@@ -1,29 +1,38 @@
 .mat-card-design {
     max-width: 550px;
     margin-left:40px;
+    min-height: 482px;
     max-height: 482px;
 }
 
 .mat-card-small-middle-design{
     max-width: 350px;
     margin-left:30px;
-    max-height: 482px;
+    min-height: 368px;
+    max-height: 368px;
 }
 
 .mat-card-small-right-design{
     max-width: 350px;
     margin-right:80px;
-    max-height: 482px;
+    min-height: 368px;
+    max-height: 368px;
 }
 
 .mat-card-small-left-design{
     max-width: 350px;
     margin-left:80px;
-    max-height: 482px;
+    min-height: 368px;
+    max-height: 368px;
 }
 
 .picture{
-    max-height: 367px;
+    max-height: 345px;
+}
+
+.tiny-picture{
+    max-height: 230px;
+    min-height: 230px;
 }
 
 .author-color{

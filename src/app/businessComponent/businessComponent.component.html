@@ -21,17 +21,17 @@
 <div class="row">
     <div class="col-md-4">
         <div *ngFor="let newsContent of moreNewsContents1">
-            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniLeftCard]=true></app-newsContentComponent>
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniLeftCard]=true [miniCard]=true></app-newsContentComponent>
         </div>
     </div>
     <div class="col-md-4">
         <div *ngFor="let newsContent of moreNewsContents2">
-            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniMiddleCard]=true></app-newsContentComponent>
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniMiddleCard]=true [miniCard]=true></app-newsContentComponent>
         </div>
     </div>
     <div class="col-md-4">
         <div *ngFor="let newsContent of moreNewsContents3">
-            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniRightCard]=true></app-newsContentComponent>
+            <app-newsContentComponent [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniRightCard]=true [miniCard]=true></app-newsContentComponent>
         </div>
     </div>
 </div>
