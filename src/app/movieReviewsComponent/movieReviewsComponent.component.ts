@@ -13,6 +13,7 @@ export class MovieReviewsComponent implements OnInit{
     mainNewsType:string = "Movie Reviews";
 
     ngOnInit(){
+        scrollTo(0,0);
         this.newsDataService.retrieveMovieReviews('drama').subscribe(response =>{
             console.log(response);
         },

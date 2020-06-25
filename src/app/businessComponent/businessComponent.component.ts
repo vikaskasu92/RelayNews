@@ -32,6 +32,7 @@ export class BusinessComponent implements OnInit{
     showMostViewed:boolean = false;
 
     ngOnInit(){
+        scrollTo(0,0);
         this.loadingSpinner();
         this.populteNews();
     }

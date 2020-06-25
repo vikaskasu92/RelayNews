@@ -18,7 +18,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainBodyComponent } from './mainBody/mainBody.component';
-import { TopStoriesComponent } from './topStories/topStories.component';
 import { BusinessComponent } from './businessComponent/businessComponent.component';
 import { TechnologyComponent } from './technologyComponent/technologyComponent.component';
 import { PoliticsComponent } from './politicsComponent/politicsComponent.component';
@@ -29,6 +28,7 @@ import { ComponentHeadingComponent } from './shared/components/componentHeading/
 import { MostViewedComponent } from './shared/components/mostViewedComponent/mostViewedComponent.component';
 import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.component';
 import { MoreNewsDialog } from './shared/dialogs/moreNewsDialog/moreNewsDialog.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import { MoreNewsDialog } from './shared/dialogs/moreNewsDialog/moreNewsDialog.c
     HeaderComponent,
     FooterComponent,
     MainBodyComponent,
-    TopStoriesComponent,
+    SearchComponent,
     BusinessComponent,
     TechnologyComponent,
     PoliticsComponent,

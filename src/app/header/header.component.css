@@ -1,5 +1,8 @@
 .main-nav-background{
     background-color: #005594;
+    position:fixed;
+    top: 0px;
+    z-index: 1000;
 }
 
 .logo{
