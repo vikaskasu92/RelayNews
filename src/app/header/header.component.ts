@@ -51,6 +51,7 @@ export class HeaderComponent{
     private _callSearchTriggerSequence(response:any){
         this.common.searchResponse = response;
         this.common.searchSubscriptionCalled = false;
+        this.common.directToSearch = false;
         if(window.location.pathname === "/search"){
             this.common.searchTriggered.next(true);
         }else{

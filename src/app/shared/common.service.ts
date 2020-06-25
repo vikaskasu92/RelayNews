@@ -28,6 +28,7 @@ export class CommonService{
     searchSubscriptionCalled:boolean = false;
     searchvalue = new BehaviorSubject<string>(null);
     searchValueSaved= this.searchvalue.asObservable();
+    directToSearch:boolean = true;
 
     prePopulateNews(response:any,newsType:string){
         this._initiatePrePopulateNews();

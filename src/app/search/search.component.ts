@@ -27,6 +27,9 @@ export class SearchComponent implements OnInit{
     ngOnInit(){
         scrollTo(0,0);
         this.searchValue = this.common.searchValueSaved;
+        if(this.common.directToSearch){
+            this.router.navigate(['/business']);
+        }
         this.common.searchTriggered.subscribe(value=>{
             if(!this.common.searchSubscriptionCalled){
                 console.log("from search component subscription",this.common.searchResponse);
