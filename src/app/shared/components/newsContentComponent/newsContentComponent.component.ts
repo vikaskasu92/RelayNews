@@ -42,7 +42,7 @@ export class NewsContentComponent implements OnInit{
     }
 
     openMoreInfoOnDialog(){
-        if(this.moreNewsDialog === false || this.moreNewsDialog != undefined){
+        if(!this.innerDialogCard){
             const data = {url:this.image,title:this.title,author:this.author,time:this.time,abstract:this.abstract,moreInfo:this.moreInfo};
             const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
         }
