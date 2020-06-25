@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NewsDataService } from '../shared/newsData.service';
 import { CommonService } from '../shared/common.service';
 
@@ -7,7 +7,7 @@ import { CommonService } from '../shared/common.service';
     templateUrl:'./search.component.html',
     styleUrls:['./search.component.css']
 })
-export class SearchComponent{
+export class SearchComponent implements OnInit{
 
     constructor(private common:CommonService){}
 
@@ -15,7 +15,12 @@ export class SearchComponent{
 
     ngOnInit(){
         scrollTo(0,0);
-        console.log("from search component ",this.common.searchResponse);
+        this.common.searchTriggered.subscribe(value=>{
+            if(!this.common.searchSubscriptionCalled){
+                console.log("from search component subscription",this.common.searchResponse);
+                this.common.searchSubscriptionCalled = true;
+            }
+        })
     }
 
 }
