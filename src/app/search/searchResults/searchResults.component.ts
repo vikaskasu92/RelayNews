@@ -1,17 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CommonService } from '../../common.service';
-import { MoreNewsDialog } from '../../dialogs/moreNewsDialog/moreNewsDialog.component';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/shared/common.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MoreNewsDialog } from 'src/app/shared/dialogs/moreNewsDialog/moreNewsDialog.component';
 
 @Component({
-    selector:'app-newsContentComponent',
-    templateUrl:'./newsContentComponent.component.html',
-    styleUrls:['./newsContentComponent.component.css']
+    selector:'app-searchResults',
+    templateUrl:'./searchResults.component.html',
+    styleUrls:['./searchResults.component.css']
 })
-export class NewsContentComponent implements OnInit{
+export class SearchResultsComponent implements OnInit{
 
     constructor(private commonService:CommonService,
-                private matDialog:MatDialog,){}
+        private matDialog:MatDialog,){}
 
     @Input() image:string;
     @Input() title:string;
@@ -19,16 +19,10 @@ export class NewsContentComponent implements OnInit{
     @Input() time:string;
     @Input() moreInfo:string;
     @Input() abstract:string;
-    @Input() miniMiddleRightCard:boolean;
-    @Input() majorCard:boolean;
-    @Input() miniLeftCard:boolean;
-    @Input() miniMiddleCard:boolean;
-    @Input() miniRightCard:boolean;
-    @Input() miniCard:boolean;
     @Input() moreNewsDialog:boolean;
     @Input() innerDialogCard:boolean;
     imageExist:boolean = false;
-
+    
     ngOnInit(){
         if(this.image === undefined){
             this.imageExist = true;
@@ -39,12 +33,13 @@ export class NewsContentComponent implements OnInit{
         event.preventDefault();
         window.open(this.moreInfo);
     }
-
+    
     openMoreInfoOnDialog(){
         if(!this.innerDialogCard){
             const data = {url:this.image,title:this.title,author:this.author,time:this.time,abstract:this.abstract,moreInfo:this.moreInfo};
             const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
         }
     }
+    
 
 }

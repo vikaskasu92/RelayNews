@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NewsContent } from './models/newsContent.model';
 import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({providedIn:'root'})
 export class CommonService{
@@ -26,6 +26,8 @@ export class CommonService{
     searchResponse:any;
     searchTriggered = new BehaviorSubject<boolean>(true);
     searchSubscriptionCalled:boolean = false;
+    searchvalue = new BehaviorSubject<string>(null);
+    searchValueSaved= this.searchvalue.asObservable();;
 
     prePopulateNews(response:any,newsType:string){
         this._initiatePrePopulateNews();

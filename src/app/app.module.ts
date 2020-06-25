@@ -31,6 +31,7 @@ import { MoreNewsDialog } from './shared/dialogs/moreNewsDialog/moreNewsDialog.c
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { EconomyComponent } from './economy/economy.component';
+import { SearchResultsComponent } from './search/searchResults/searchResults.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { EconomyComponent } from './economy/economy.component';
     ComponentHeadingComponent,
     MostViewedComponent,
     EconomyComponent,
+    SearchResultsComponent,
     LoadingDialog,
     MoreNewsDialog
   ],

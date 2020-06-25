@@ -1,1 +1,6 @@
 <app-componentHeading [mainNewsType]="mainNewsType" ></app-componentHeading>
+<br>
+<span class="search-results-heading"><strong>SEARCH RESULTS FOR "{{ searchValue | async }}"</strong></span>
+<hr class="top-hr-coloring">
+<br>
+<app-searchResults></app-searchResults>

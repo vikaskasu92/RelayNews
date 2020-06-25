@@ -1,0 +1,26 @@
+<div class="row">
+    <mat-card>
+          <mat-card-content>
+            <p class="news-title" (click)="openMoreInfoOnDialog()">
+              <strong>{{ title }}</strong>
+            </p>
+            <div>
+              <p>
+                {{ abstract }}
+              </p>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+              <span class="author-color">{{ author }}</span><br>
+              <div class="row mat-content-last-row">
+                  <span class="time-color time-space">{{ time }}</span>
+                  <div class="push"></div>
+                  <div *ngIf="innerDialogCard">
+                    <a href="#" (click)="openMoreInfo($event)" class="more-info-space">More Info</a>
+                  </div>
+              </div>
+          </mat-card-actions>
+        </mat-card>
+        <br>
+        <br>
+</div>

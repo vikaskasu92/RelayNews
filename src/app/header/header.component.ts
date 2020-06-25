@@ -19,6 +19,7 @@ export class HeaderComponent{
 
     searchContentValue:string;
     dialogRef: MatDialogRef<unknown, any>;
+    searchDisabled:boolean = true;
 
     openNews(newsType:string){
         this.router.navigate(['/'+newsType]);
@@ -29,20 +30,32 @@ export class HeaderComponent{
     }
 
     searchContent(){
+        this.common.searchvalue.next(this.searchContentValue);
         this.loadingSpinner();
         this.newsDataService.retrieveCustomSearch(this.searchContentValue).subscribe( response => {
             this._callSearchTriggerSequence(response);
             this.dialogRef.close();
         },reject =>{
 
-        })
+        });
+    }
+
+    searchTyped(){
+        if(this.searchContentValue != ""){
+            this.searchDisabled = false;
+        }else{
+            this.searchDisabled = true;
+        }
     }
 
     private _callSearchTriggerSequence(response:any){
         this.common.searchResponse = response;
         this.common.searchSubscriptionCalled = false;
-        this.router.navigate(['/search']);
-        this.common.searchTriggered.next(true);
+        if(window.location.pathname === "/search"){
+            this.common.searchTriggered.next(true);
+        }else{
+            this.router.navigate(['/search']); 
+        }
     }
 
 }
