@@ -20,11 +20,12 @@ export class MoreNewsDialog implements OnInit{
 
     ngOnInit(): void {
         this.abstract = this.data.abstract;
-        this.image = this.data.url;
         this.title = this.data.title;
         this.author = this.data.author;
         this.time = this.data.time;
         this.moreInfo = this.data.moreInfo;
+        this.image = this.data.url;
+        console.log(this.image);
     }
 
     closeMoreNewsDialog(){

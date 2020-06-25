@@ -5,6 +5,12 @@
     max-height: 482px;
 }
 
+.mat-card-no-pic{
+    max-width: 550px;
+    min-height: 182px !important;
+    max-height: 182px !important;
+}
+
 .mat-card-inner-desing{
     max-width: 550px;
     min-height: 482px;

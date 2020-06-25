@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonService } from '../../common.service';
 import { MoreNewsDialog } from '../../dialogs/moreNewsDialog/moreNewsDialog.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
     templateUrl:'./newsContentComponent.component.html',
     styleUrls:['./newsContentComponent.component.css']
 })
-export class NewsContentComponent{
+export class NewsContentComponent implements OnInit{
 
     constructor(private commonService:CommonService,
                 private matDialog:MatDialog,){}
@@ -27,6 +27,14 @@ export class NewsContentComponent{
     @Input() miniCard:boolean;
     @Input() moreNewsDialog:boolean;
     @Input() innerDialogCard:boolean;
+    imageExist:boolean = false;
+
+    ngOnInit(){
+        if(this.image === undefined){
+            this.imageExist = true;
+            console.log("image not found");
+        }
+    }
 
     openMoreInfo(event:any){
         event.preventDefault();
@@ -36,7 +44,6 @@ export class NewsContentComponent{
     openMoreInfoOnDialog(){
         if(this.moreNewsDialog === false || this.moreNewsDialog != undefined){
             const data = {url:this.image,title:this.title,author:this.author,time:this.time,abstract:this.abstract,moreInfo:this.moreInfo};
-            console.log(data);
             const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
         }
     }

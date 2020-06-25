@@ -109,9 +109,9 @@ export class CommonService{
         this.mostWatched5 = [];
     }
 
-    private _populatedMostWatched1(response:NewsContent){
+    private _populatedMostWatched1(response:any){
         this.mostWatched1.push(response.title);
-        this.mostWatched1.push(response.author);
+        this.mostWatched1.push(response.byline.substring(2));
         this.mostWatched1.push(response.photo);
         this.mostWatched1.push(response.time);
         this.mostWatched1.push(response.url);
@@ -119,36 +119,36 @@ export class CommonService{
         
     }
 
-    private _populatedMostWatched2(response:NewsContent){
+    private _populatedMostWatched2(response:any){
         this.mostWatched2.push(response.title);
-        this.mostWatched2.push(response.author);
+        this.mostWatched2.push(response.byline.substring(2));
         this.mostWatched2.push(response.photo);
         this.mostWatched2.push(response.time);
         this.mostWatched2.push(response.url);
         this.mostWatched2.push(response.abstract);
     }
 
-    private _populatedMostWatched3(response:NewsContent){
+    private _populatedMostWatched3(response:any){
         this.mostWatched3.push(response.title);
-        this.mostWatched3.push(response.author);
+        this.mostWatched3.push(response.byline.substring(2));
         this.mostWatched3.push(response.photo);
         this.mostWatched3.push(response.time);
         this.mostWatched3.push(response.url);
         this.mostWatched3.push(response.abstract);
     }
 
-    private _populatedMostWatched4(response:NewsContent){
+    private _populatedMostWatched4(response:any){
         this.mostWatched4.push(response.title);
-        this.mostWatched4.push(response.author);
+        this.mostWatched4.push(response.byline.substring(2));
         this.mostWatched4.push(response.photo);
         this.mostWatched4.push(response.time);
         this.mostWatched4.push(response.url);
         this.mostWatched4.push(response.abstract);
     }
 
-    private _populatedMostWatched5(response:NewsContent){
+    private _populatedMostWatched5(response:any){
         this.mostWatched5.push(response.title);
-        this.mostWatched5.push(response.author);
+        this.mostWatched5.push(response.byline.substring(2));
         this.mostWatched5.push(response.photo);
         this.mostWatched5.push(response.time);
         this.mostWatched5.push(response.url);
