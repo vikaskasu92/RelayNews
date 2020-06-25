@@ -3,5 +3,6 @@ export interface NewsContent{
     photo:string,
     url:string,
     time:string,
-    author:string
+    author:string,
+    abstract:string
 }

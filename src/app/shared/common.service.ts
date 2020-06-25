@@ -26,7 +26,7 @@ export class CommonService{
     prePopulateNews(response:any,newsType:string){
         this._initiatePrePopulateNews();
         for(let i=0; i<response.results.length; i++){
-            const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:''};
+            const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:'',abstract:''};
             this._populateNews(response,newsType,i,newsResponse);
         }  
     }
@@ -55,6 +55,7 @@ export class CommonService{
             newsResponse.photo = response.results[i].multimedia[0].url;
             newsResponse.time = response.results[i].created_date.substring(0,10);
             newsResponse.url = response.results[i].short_url;
+            newsResponse.abstract = response.results[i].abstract;
             this._pushToArrays(newsResponse);
         }
     }
@@ -114,6 +115,8 @@ export class CommonService{
         this.mostWatched1.push(response.photo);
         this.mostWatched1.push(response.time);
         this.mostWatched1.push(response.url);
+        this.mostWatched1.push(response.abstract);
+        
     }
 
     private _populatedMostWatched2(response:NewsContent){
@@ -122,6 +125,7 @@ export class CommonService{
         this.mostWatched2.push(response.photo);
         this.mostWatched2.push(response.time);
         this.mostWatched2.push(response.url);
+        this.mostWatched2.push(response.abstract);
     }
 
     private _populatedMostWatched3(response:NewsContent){
@@ -130,6 +134,7 @@ export class CommonService{
         this.mostWatched3.push(response.photo);
         this.mostWatched3.push(response.time);
         this.mostWatched3.push(response.url);
+        this.mostWatched3.push(response.abstract);
     }
 
     private _populatedMostWatched4(response:NewsContent){
@@ -138,6 +143,7 @@ export class CommonService{
         this.mostWatched4.push(response.photo);
         this.mostWatched4.push(response.time);
         this.mostWatched4.push(response.url);
+        this.mostWatched4.push(response.abstract);
     }
 
     private _populatedMostWatched5(response:NewsContent){
@@ -146,6 +152,7 @@ export class CommonService{
         this.mostWatched5.push(response.photo);
         this.mostWatched5.push(response.time);
         this.mostWatched5.push(response.url);
+        this.mostWatched5.push(response.abstract);
     }
 
 

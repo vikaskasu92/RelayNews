@@ -18,12 +18,15 @@ export class NewsContentComponent{
     @Input() author:string;
     @Input() time:string;
     @Input() moreInfo:string;
+    @Input() abstract:string;
     @Input() miniMiddleRightCard:boolean;
     @Input() majorCard:boolean;
     @Input() miniLeftCard:boolean;
     @Input() miniMiddleCard:boolean;
     @Input() miniRightCard:boolean;
     @Input() miniCard:boolean;
+    @Input() moreNewsDialog:boolean;
+    @Input() innerDialogCard:boolean;
 
     openMoreInfo(event:any){
         event.preventDefault();
@@ -31,8 +34,11 @@ export class NewsContentComponent{
     }
 
     openMoreInfoOnDialog(){
-        const data = {};
-        const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
+        if(this.moreNewsDialog === false || this.moreNewsDialog != undefined){
+            const data = {url:this.image,title:this.title,author:this.author,time:this.time,abstract:this.abstract,moreInfo:this.moreInfo};
+            console.log(data);
+            const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
+        }
     }
 
 }

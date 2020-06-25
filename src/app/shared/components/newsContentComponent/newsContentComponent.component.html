@@ -1,16 +1,23 @@
-<mat-card [ngClass]="{'mat-card-small-design': miniMiddleRightCard, 'mat-card-design' : majorCard, 'mat-card-small-left-design' : miniLeftCard, 'mat-card-small-right-design' : miniRightCard, 'mat-card-small-middle-design' : miniMiddleCard}">
-    <img mat-card-image [ngClass]="{'tiny-picture': miniCard, 'picture' : majorCard}" src="{{ image }}" alt="News Image from NYT" (click)="openMoreInfoOnDialog()">
+<mat-card [ngClass]="{'mat-card-small-design': miniMiddleRightCard, 'mat-card-design' : majorCard, 'mat-card-small-left-design' : miniLeftCard, 'mat-card-inner-desing' : innerDialogCard, 'mat-card-small-right-design' : miniRightCard, 'mat-card-small-middle-design' : miniMiddleCard}">
+    <img mat-card-image [ngClass]="{'tiny-picture': miniCard, 'picture' : majorCard, 'picture-inner' : innerDialogCard}" src="{{ image }}" alt="News Image from NYT" (click)="openMoreInfoOnDialog()">
     <mat-card-content>
       <p class="news-title" (click)="openMoreInfoOnDialog()">
         <strong>{{ title }}</strong>
       </p>
+      <div *ngIf="innerDialogCard">
+        <p>
+          {{ abstract }}
+        </p>
+      </div>
     </mat-card-content>
     <mat-card-actions>
         <span class="author-color">{{ author }}</span><br>
         <div class="row mat-content-last-row">
             <span class="time-color time-space">{{ time }}</span>
             <div class="push"></div>
-            <a href="#" (click)="openMoreInfo($event)" class="more-info-space">More Info</a>
+            <div *ngIf="innerDialogCard">
+              <a href="#" (click)="openMoreInfo($event)" class="more-info-space">More Info</a>
+            </div>
         </div>
     </mat-card-actions>
   </mat-card>
