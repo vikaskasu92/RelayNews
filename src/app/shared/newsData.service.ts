@@ -10,6 +10,10 @@ export class NewsDataService{
        return this.http.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchValue+"&api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
     }
 
+    retrieveMainPage(searchValue:string,today:number,pageNumber:number){
+        return this.http.get<any>("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchValue+"&begin_date="+today+"&sort=newest&api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
+    }
+
     retrieveNews(newsType:string){
         return this.http.get<any>("https://api.nytimes.com/svc/topstories/v2/"+newsType+".json?api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
     }

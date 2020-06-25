@@ -6,15 +6,18 @@ import { PoliticsComponent } from './politicsComponent/politicsComponent.compone
 import { MostPopularComponent } from './mostPopularComponent/mostPopular.component';
 import { MovieReviewsComponent } from './movieReviewsComponent/movieReviewsComponent.component';
 import { SearchComponent } from './search/search.component';
+import { EconomyComponent } from './economy/economy.component';
 
 
 const routes: Routes = [
   {path:'business',component:BusinessComponent},
+  {path:'economy',component:EconomyComponent},
   {path:'technology',component:TechnologyComponent},
   {path:'politics',component:PoliticsComponent},
   {path:'search',component:SearchComponent},
   {path:'mostPopular',component:MostPopularComponent},
   {path:'movieReviews',component:MovieReviewsComponent},
+  {path:'', pathMatch:'full', redirectTo:'business'},
   {path:'**', redirectTo:'business'},
 ];
 

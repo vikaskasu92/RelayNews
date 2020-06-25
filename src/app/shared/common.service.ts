@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NewsContent } from './models/newsContent.model';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({providedIn:'root'})
 export class CommonService{
@@ -33,6 +33,35 @@ export class CommonService{
             const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:'',abstract:''};
             this._populateNews(response,newsType,i,newsResponse);
         }  
+    }
+
+    prePopulateSearchedNews(response:any){
+        this._initiatePrePopulateNews();
+        for(let i=0; i<response.response.docs.length; i++){
+            const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:'',abstract:''};
+            this._populateSearchedNews(response,i,newsResponse);
+        }  
+    }
+
+    private _populateSearchedNews(response:any,i:number,newsResponse:NewsContent){
+        newsResponse.title = response.response.docs[i].headline.main;
+        newsResponse.author = response.response.docs[i].byline.original;
+        if(response.response.docs[i].byline.original != null){
+            newsResponse.author = response.response.docs[i].byline.original.substring(2);
+        }
+        newsResponse.photo = "/../../assets/images/no_image.png";
+        if( response.response.docs[i].multimedia.length != 0){
+            if(response.response.docs[i].multimedia[i].url != null){
+                newsResponse.photo = "https://static01.nyt.com/"+response.response.docs[i].multimedia[i].url;
+            }
+        } 
+        newsResponse.time = response.response.docs[i].pub_date;
+        if(response.response.docs[i].pub_date != null){
+            newsResponse.time = response.response.docs[i].pub_date.substring(0,10);
+        }
+        newsResponse.url = response.response.docs[i].web_url;
+        newsResponse.abstract = response.response.docs[i].abstract;
+        this._pushToArrays(newsResponse);
     }
 
     populateMostWatchedNews(response:any){

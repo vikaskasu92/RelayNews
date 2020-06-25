@@ -8,6 +8,7 @@
         <mat-menu #hamburgerMenu="matMenu">
             <mat-list role="list">
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('business')">Business</mat-list-item>
+                <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('economy')">Economy</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('technology')">Technology</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('politics')">Politics</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('movieReviews')">Movie Reviews</mat-list-item>
@@ -17,6 +18,7 @@
         <h3 class="header-content-text">Relay News</h3>
         <div class="header-content-1st-button">
             <button mat-button class="header-content-text" (click)="openNews('business')">Business</button>
+            <button mat-button class="header-content-text" (click)="openNews('economy')">Economy</button>
             <button mat-button class="header-content-text" (click)="openNews('technology')">Technology</button>
             <button mat-button class="header-content-text" (click)="openNews('politics')">Politics</button>
             <button mat-button class="header-content-text" (click)="openNews('movieReviews')">Movie Reviews</button>

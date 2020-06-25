@@ -1,0 +1,38 @@
+<app-componentHeading [mainNewsType]="mainNewsType" [newsType]="newsType" ></app-componentHeading>
+<div class="row bread-crumbs-whole justify-content-md-center">
+    <span class="text-center"><span class="bread-crumb" (click)="searchRelatedNews('us economy')"><strong>ECONOMY</strong></span> | <span class="bread-crumb" (click)="searchRelatedNews('stocks')"><strong>MARKETS</strong></span> | <span class="bread-crumb" (click)="searchRelatedNews('investing')"><strong>INVESTING</strong></span></span>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div *ngFor="let newsContent of newsContents1">
+            <app-newsContentComponent [abstract]=newsContent.abstract [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [majorCard]=true [moreNewsDialog]=false></app-newsContentComponent>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div *ngFor="let newsContent of newsContents2">
+            <app-newsContentComponent [abstract]=newsContent.abstract  [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [majorCard]=true [moreNewsDialog]=false></app-newsContentComponent>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div *ngFor="let newsContent of moreNewsContents1">
+            <app-newsContentComponent [abstract]=newsContent.abstract  [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniLeftCard]=true [miniCard]=true [moreNewsDialog]=false></app-newsContentComponent>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div *ngFor="let newsContent of moreNewsContents2">
+            <app-newsContentComponent [abstract]=newsContent.abstract  [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniMiddleCard]=true [miniCard]=true  [moreNewsDialog]=false></app-newsContentComponent>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div *ngFor="let newsContent of moreNewsContents3">
+            <app-newsContentComponent [abstract]=newsContent.abstract  [image]=newsContent.photo [title]=newsContent.title [author]=newsContent.author [time]=newsContent.time [moreInfo]=newsContent.url [miniRightCard]=true [miniCard]=true  [moreNewsDialog]=false></app-newsContentComponent>
+        </div>
+    </div>
+</div>
+<br>
+<div *ngIf="showMostViewed">
+    <app-mostViewedComponent></app-mostViewedComponent>
+</div>
