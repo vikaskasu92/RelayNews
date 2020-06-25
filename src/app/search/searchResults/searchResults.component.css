@@ -1,0 +1,41 @@
+.mat-card-design{
+    margin-left: 78px;
+    width: 90vw;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.abstract-color{
+    color: #5C5C5C;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.author-space{
+    margin-left:6px;
+}
+
+.time-space{
+    margin-left:23px;
+}
+
+.author-color{
+    color:#2068A0;
+}
+
+.time-color{
+    color:#737373;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+    
+    .small-window-search-results{
+        margin-left: 35px;
+        width: 90vw;
+    }
+
+}

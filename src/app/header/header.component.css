@@ -38,3 +38,26 @@
 .mat-menu-content:hover {
     background-color: #DEDEDE;
 }
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    .small-window-hide{
+        display: none;
+    }
+
+    .small-window-logo{
+        margin-left: -4px;
+        margin-right: -11px;
+    }
+
+    .small-window-search-width{
+        max-width: 24vw;
+    }
+
+    .small-window-title-margin{
+        margin-right: 20px;
+    }
+
+}

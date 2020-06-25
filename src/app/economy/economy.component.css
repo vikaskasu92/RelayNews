@@ -1,6 +1,7 @@
 .bread-crumbs-whole{
     margin:20px;
     margin-bottom:40px;
+    flex-direction: column;
 }
 
 .bread-crumb{

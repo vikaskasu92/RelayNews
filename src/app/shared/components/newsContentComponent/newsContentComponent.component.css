@@ -14,28 +14,27 @@
 .mat-card-inner-desing{
     max-width: 550px;
     min-height: 495px;
-    max-height: 495px;
 }
 
 .mat-card-small-middle-design{
     max-width: 350px;
     margin-left:30px;
-    min-height: 368px;
-    max-height: 368px;
+    min-height: 380px;
+    max-height: 380px;
 }
 
 .mat-card-small-right-design{
     max-width: 350px;
     margin-right:80px;
-    min-height: 368px;
-    max-height: 368px;
+    min-height: 380px;
+    max-height: 380px;
 }
 
 .mat-card-small-left-design{
     max-width: 350px;
     margin-left:80px;
-    min-height: 368px;
-    max-height: 368px;
+    min-height: 380px;
+    max-height: 380px;
 }
 
 .picture{
@@ -85,4 +84,40 @@
 
 .push{
     flex-grow: 1;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    .small-window-mat-card-design {
+        max-width: 90vw;
+        margin-left: 20px;
+        min-height: 0px;
+    }
+
+    .small-window-mat-card-left-desing{
+        max-width: 90vw;
+        margin-left: 20px;
+        min-height: 0px;
+    }
+
+    .small-window-mat-card-middle-design{
+        max-width: 90vw;
+        margin-left: 20px;
+        min-height: 0px;
+    }
+
+    .small-window-mat-card-right-design{
+        max-width: 90vw;
+        margin-left: 20px;
+        min-height: 0px;
+        margin-right: 0px;
+    }
+
+    .small-window-mat-card-inner-design{
+        max-width: 90vw;
+        min-height: 0px;
+    }
+
 }

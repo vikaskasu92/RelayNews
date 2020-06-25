@@ -1,17 +1,17 @@
 <div class="row">
-    <mat-card>
+    <mat-card class="mat-card-design small-window-search-results">
           <mat-card-content>
-            <p class="news-title" (click)="openMoreInfoOnDialog()">
+            <p class="news-title cursor-pointer" (click)="openMoreInfoOnDialog()">
               <strong>{{ title }}</strong>
             </p>
             <div>
-              <p>
+              <p class="abstract-color cursor-pointer" (click)="openMoreInfoOnDialog()">
                 {{ abstract }}
               </p>
             </div>
           </mat-card-content>
           <mat-card-actions>
-              <span class="author-color">{{ author }}</span><br>
+              <span class="author-color author-space">{{ author }}</span><br>
               <div class="row mat-content-last-row">
                   <span class="time-color time-space">{{ time }}</span>
                   <div class="push"></div>

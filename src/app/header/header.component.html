@@ -11,23 +11,25 @@
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('economy')">Economy</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('technology')">Technology</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('politics')">Politics</mat-list-item>
-                <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('movieReviews')">Movie Reviews</mat-list-item>
+                <!--<mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('movieReviews')">Movie Reviews</mat-list-item>-->
               </mat-list>
           </mat-menu>
-        <img alt="Relay News Logo" class="img-fluid logo" src="../../assets/logo/relayLogo.png">
-        <h3 class="header-content-text">Relay News</h3>
-        <div class="header-content-1st-button">
+        <img alt="Relay News Logo" class="img-fluid logo small-window-logo" src="../../assets/logo/relayLogo.png">
+        <h3 class="header-content-text small-window-title-margin">Relay News</h3>
+        <div class="header-content-1st-button small-window-hide">
             <button mat-button class="header-content-text" (click)="openNews('business')">Business</button>
             <button mat-button class="header-content-text" (click)="openNews('economy')">Economy</button>
             <button mat-button class="header-content-text" (click)="openNews('technology')">Technology</button>
             <button mat-button class="header-content-text" (click)="openNews('politics')">Politics</button>
-            <button mat-button class="header-content-text" (click)="openNews('movieReviews')">Movie Reviews</button>
+            <!--<button mat-button class="header-content-text" (click)="openNews('movieReviews')">Movie Reviews</button>-->
         </div>
         <div class="push"></div>
-        <mat-form-field>
-            <mat-label></mat-label>
-            <input matInput [(ngModel)]="searchContentValue" (ngModelChange)="searchTyped()" placeholder="Search Relay News">
-        </mat-form-field>
+        <div class="small-window-search-width">
+            <mat-form-field class="small-window-search-width">
+                <mat-label></mat-label>
+                <input matInput [(ngModel)]="searchContentValue" (ngModelChange)="searchTyped()" placeholder="Search Relay News">
+            </mat-form-field>
+        </div>
         <div class="search-icon">
             <button mat-button (click)="searchContent()" [disabled]="searchDisabled">
                 <svg class="bi bi-search header-content-text" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

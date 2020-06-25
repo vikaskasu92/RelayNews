@@ -22,6 +22,7 @@ export class HeaderComponent{
     searchDisabled:boolean = true;
 
     openNews(newsType:string){
+        this.searchContentValue = "";
         this.router.navigate(['/'+newsType]);
     }
 
@@ -31,8 +32,10 @@ export class HeaderComponent{
 
     searchContent(){
         this.common.searchvalue.next(this.searchContentValue);
+        this.common.searchValueInHeader = this.searchContentValue;
         this.loadingSpinner();
-        this.newsDataService.retrieveCustomSearch(this.searchContentValue).subscribe( response => {
+        let date = this.common.calculateTodayDate();
+        this.newsDataService.retrieveCustomSearchWithPageNumber(this.searchContentValue,date,1).subscribe( response => {
             this._callSearchTriggerSequence(response);
             this.dialogRef.close();
         },reject =>{

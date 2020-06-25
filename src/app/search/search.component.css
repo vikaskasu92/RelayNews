@@ -20,3 +20,27 @@
     font-size: 20px;
     margin-left: 64px;
 }
+
+.no-search-results{
+    font-size: 16px;
+    margin-left: 64px;
+}
+
+.middle-more-button{
+    margin-bottom:20px;
+}
+
+.more-button-style{
+    border: 1px solid #002F6C;
+    background-color: white;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    .small-window-load-more-button{
+        margin-left: 147px;
+    }
+
+}

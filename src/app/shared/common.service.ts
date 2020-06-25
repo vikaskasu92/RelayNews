@@ -13,6 +13,7 @@ export class CommonService{
     moreNewsContents1:NewsContent[];
     moreNewsContents2:NewsContent[];
     moreNewsContents3:NewsContent[];
+    searchNewsInSearch:NewsContent[];
     even:boolean;
     odd:boolean;
     first:boolean;
@@ -27,6 +28,7 @@ export class CommonService{
     searchTriggered = new BehaviorSubject<boolean>(true);
     searchSubscriptionCalled:boolean = false;
     searchvalue = new BehaviorSubject<string>(null);
+    searchValueInHeader:string;
     searchValueSaved= this.searchvalue.asObservable();
     directToSearch:boolean = true;
 
@@ -44,6 +46,47 @@ export class CommonService{
             const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:'',abstract:''};
             this._populateSearchedNews(response,i,newsResponse);
         }  
+    }
+
+    prePopulateSearchedNewsInSearch(response:any){
+        this._initiatePrePopulateNewsInSearch();
+        for(let i=0; i<response.response.docs.length; i++){
+            const newsResponse:NewsContent = {title:'',author:'',photo:'',time:'',url:'',abstract:''};
+            this._populateSearchedNewsInSearch(response,i,newsResponse);
+        }  
+    }
+
+    populateMostWatchedNews(response:any){
+        this._initiateMostWatchedArray();
+        this._populatedMostWatched1(response.results[0]);
+        this._populatedMostWatched2(response.results[1]);
+        this._populatedMostWatched3(response.results[2]);
+        this._populatedMostWatched4(response.results[3]);
+        this._populatedMostWatched5(response.results[4]);
+    }
+
+    openDialog(dialog:MatDialog,component:any,data:any){
+        const dialogRef = dialog.open(component, {
+            disableClose: true,
+            data:data
+        });
+        return dialogRef;
+    }
+
+    calculateTodayDate():number{
+        let month = this._appendLeadingZeroIfRequired(new Date().toLocaleDateString().substring(0,1));
+        let day = this._appendLeadingZeroIfRequired(new Date().toLocaleDateString().substring(2,4));
+        let year = new Date().toLocaleDateString().substring(5);
+        var date = parseInt((year+month+day));
+        return date;
+    }
+
+    private _appendLeadingZeroIfRequired(value:string):string{
+        if(value.length === 1){
+            return 0+value;
+        }else{
+            return value;
+        }
     }
 
     private _populateSearchedNews(response:any,i:number,newsResponse:NewsContent){
@@ -67,21 +110,25 @@ export class CommonService{
         this._pushToArrays(newsResponse);
     }
 
-    populateMostWatchedNews(response:any){
-        this._initiateMostWatchedArray();
-        this._populatedMostWatched1(response.results[0]);
-        this._populatedMostWatched2(response.results[1]);
-        this._populatedMostWatched3(response.results[2]);
-        this._populatedMostWatched4(response.results[3]);
-        this._populatedMostWatched5(response.results[4]);
-    }
-
-    openDialog(dialog:MatDialog,component:any,data:any){
-        const dialogRef = dialog.open(component, {
-            disableClose: true,
-            data:data
-        });
-        return dialogRef;
+    private _populateSearchedNewsInSearch(response:any,i:number,newsResponse:NewsContent){
+        newsResponse.title = response.response.docs[i].headline.main;
+        newsResponse.author = response.response.docs[i].byline.original;
+        if(response.response.docs[i].byline.original != null){
+            newsResponse.author = response.response.docs[i].byline.original.substring(2);
+        }
+        newsResponse.photo = undefined;
+        if( response.response.docs[i].multimedia.length != 0){
+            if(response.response.docs[i].multimedia[i].url != null){
+                newsResponse.photo = "https://static01.nyt.com/"+response.response.docs[i].multimedia[i].url;
+            }
+        } 
+        newsResponse.time = response.response.docs[i].pub_date;
+        if(response.response.docs[i].pub_date != null){
+            newsResponse.time = response.response.docs[i].pub_date.substring(0,10);
+        }
+        newsResponse.url = response.response.docs[i].web_url;
+        newsResponse.abstract = response.response.docs[i].abstract;
+        this._pushToInSearchArrays(newsResponse);
     }
 
     private _populateNews(response:any,newsType:string,i:number,newsResponse:NewsContent){
@@ -106,6 +153,10 @@ export class CommonService{
         }else{
             this._pushToBottom(newsResponse);
         }
+    }
+
+    private _pushToInSearchArrays(newsResponse:NewsContent){
+        this.searchNewsInSearch.push(newsResponse);
     }
 
     private _pushToBottom(newsResponse:NewsContent){
@@ -135,6 +186,10 @@ export class CommonService{
         this.moreNewsContents1 = [];
         this.moreNewsContents2 = [];
         this.moreNewsContents3 = [];
+    }
+
+    private _initiatePrePopulateNewsInSearch(){
+        this.searchNewsInSearch = [];
     }
 
     private _initiateMostWatchedArray(){

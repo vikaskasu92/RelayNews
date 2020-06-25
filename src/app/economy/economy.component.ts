@@ -30,10 +30,12 @@ export class EconomyComponent{
     mainNewsType:string = 'Economy';
     dialogRef: MatDialogRef<unknown, any>;
     showMostViewed:boolean = false;
+    breadCrumbClick:boolean;
 
     ngOnInit(){
         scrollTo(0,0);
         this.loadingSpinner();
+        this.breadCrumbClick = false;
         this.searchRelatedNews('us economy');
     }
 
@@ -42,8 +44,12 @@ export class EconomyComponent{
     }
 
     searchRelatedNews(searchValue:string){
-        let date = this._calculateTodayDate();
-        this.newsDataService.retrieveMainPage(searchValue,date,1).subscribe( response =>{
+        if(this.breadCrumbClick){
+            this.loadingSpinner();
+        }
+        this.breadCrumbClick = true;
+        let date = this.commonService.calculateTodayDate();
+        this.newsDataService.retrieveCustomSearchWithPageNumber(searchValue,date,1).subscribe( response =>{
             this.commonService.prePopulateSearchedNews(response);
             this._initializeNews();
             this.showMostViewed = true;
@@ -61,20 +67,6 @@ export class EconomyComponent{
         this.moreNewsContents3 = this.commonService.moreNewsContents3;
     }
 
-    private _calculateTodayDate():number{
-        let month = this._appendLeadingZeroIfRequired(new Date().toLocaleDateString().substring(0,1));
-        let day = this._appendLeadingZeroIfRequired(new Date().toLocaleDateString().substring(2,4));
-        let year = new Date().toLocaleDateString().substring(5);
-        var date = parseInt((year+month+day));
-        return date;
-    }
-
-    private _appendLeadingZeroIfRequired(value:string):string{
-        if(value.length === 1){
-            return 0+value;
-        }else{
-            return value;
-        }
-    }
+    
 
 }
