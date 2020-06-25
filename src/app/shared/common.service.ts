@@ -22,6 +22,7 @@ export class CommonService{
     mostWatched3:string[];
     mostWatched4:string[];
     mostWatched5:string[];
+    searchResponse:any;
 
     prePopulateNews(response:any,newsType:string){
         this._initiatePrePopulateNews();

@@ -6,8 +6,8 @@ export class NewsDataService{
 
     constructor(private http:HttpClient){}
 
-    retrieveTopStories(){
-       return this.http.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?q='lamborghini'&api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
+    retrieveCustomSearch(searchValue:string){
+       return this.http.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchValue+"&api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
     }
 
     retrieveNews(newsType:string){

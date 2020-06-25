@@ -29,6 +29,7 @@ import { MostViewedComponent } from './shared/components/mostViewedComponent/mos
 import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.component';
 import { MoreNewsDialog } from './shared/dialogs/moreNewsDialog/moreNewsDialog.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { SearchComponent } from './search/search.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     MatButtonModule,
     MatMenuModule,
