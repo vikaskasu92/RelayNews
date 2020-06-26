@@ -13,7 +13,7 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-        <span class="author-color">{{ author }}</span><br>
+        <span class="author" (click)="openMoreInfoOnDialog()">{{ author }}</span><br>
         <div class="row mat-content-last-row">
             <span class="time-color time-space">{{ time }}</span>
             <div class="push"></div>

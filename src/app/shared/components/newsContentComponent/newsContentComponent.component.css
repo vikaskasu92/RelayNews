@@ -62,8 +62,12 @@
     cursor: pointer;
 }
 
-.author-color{
+.author{
     color:#2068A0;
+}
+
+.author:hover{
+    cursor: pointer;
 }
 
 .time-color{
