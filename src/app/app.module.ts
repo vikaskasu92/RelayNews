@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './search/searchResults/searchResults.component';
 import { WorldComponent } from './world/world.component';
 import { OtherNewsComponent } from './otherNewsComponent/otherNewsComponent.component';
+import { DisplayNewsComponent } from './shared/components/disaplayNewsContentComponent/displayNews.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { OtherNewsComponent } from './otherNewsComponent/otherNewsComponent.comp
     MostViewedComponent,
     WorldComponent,
     SearchResultsComponent,
+    DisplayNewsComponent,
     LoadingDialog,
     MoreNewsDialog,
   ],
