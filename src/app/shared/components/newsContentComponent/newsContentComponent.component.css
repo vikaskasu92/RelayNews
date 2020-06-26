@@ -1,8 +1,8 @@
 .mat-card-design {
     max-width: 550px;
     margin-left:40px;
-    min-height: 482px;
-    max-height: 482px;
+    min-height: 560px;
+    max-height: 560px;
 }
 
 .mat-card-no-pic{
@@ -18,30 +18,31 @@
 .mat-card-small-middle-design{
     max-width: 350px;
     margin-left:30px;
-    min-height: 380px;
-    max-height: 380px;
+    min-height: 430px;
+    max-height: 430px;
 }
 
 .mat-card-small-right-design{
     max-width: 350px;
     margin-right:80px;
-    min-height: 380px;
-    max-height: 380px;
+    min-height: 430px;
+    max-height: 430px;
 }
 
 .mat-card-small-left-design{
     max-width: 350px;
     margin-left:80px;
-    min-height: 380px;
-    max-height: 380px;
+    min-height: 430px;
+    max-height: 430px;
 }
 
 .picture{
-    max-height: 345px;
+    min-height: 418px;
+    max-height: 418px;
 }
 
 .picture-inner{
-    max-height: 290px;
+    max-height: 392px;
 }
 
 .picture:hover{
@@ -53,8 +54,8 @@
 }
 
 .tiny-picture{
-    max-height: 230px;
-    min-height: 230px;
+    max-height: 283px;
+    min-height: 283px;
 }
 
 .tiny-picture:hover{

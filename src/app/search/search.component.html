@@ -6,8 +6,8 @@
 <div *ngFor="let data of searchData">
     <app-searchResults [image]="data.photo" [title]="data.title" [author]="data.author" [time]="data.time" [moreInfo]="data.url" [abstract]="data.abstract"></app-searchResults>
 </div>
-<div *ngIf="noSearchResults">
-    <span class="no-search-results">0 SEARCH RESULTS FOR "{{ searchValue | async }}"</span>
+<div *ngIf="noSearchResults" class="text-center">
+    <span class="no-search-results">0 SEARCH RESULTS FOR "{{ searchValue | async }}" ACCORDING TO NEW YORK TIMES</span>
 </div>
 <br>
 <div class="row justify-content-md-center middle-more-button">
