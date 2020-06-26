@@ -6,11 +6,11 @@ import { LoadingDialog } from '../shared/dialogs/loadingDialog/loadingDialog.com
 import { CommonService } from '../shared/common.service';
 
 @Component({
-    selector:'app-economy',
-    templateUrl:'./economy.component.html',
-    styleUrls:['./economy.component.css']
+    selector:'app-world',
+    templateUrl:'./world.component.html',
+    styleUrls:['./world.component.css']
 })
-export class EconomyComponent{
+export class WorldComponent{
 
     constructor(private newsDataService:NewsDataService,
                 private matDialog:MatDialog,
@@ -26,8 +26,7 @@ export class EconomyComponent{
     first:boolean;
     second:boolean;
     third:boolean;
-    newsType:string = 'US Economy';
-    mainNewsType:string = 'Economy';
+    mainNewsType:string = 'World';
     dialogRef: MatDialogRef<unknown, any>;
     showMostViewed:boolean = false;
     breadCrumbClick:boolean;
@@ -36,7 +35,7 @@ export class EconomyComponent{
         scrollTo(0,0);
         this.loadingSpinner();
         this.breadCrumbClick = false;
-        this.searchRelatedNews('us economy');
+        this.searchRelatedNews('world');
     }
 
     loadingSpinner(){
@@ -49,8 +48,8 @@ export class EconomyComponent{
         }
         this.breadCrumbClick = true;
         let date = this.commonService.calculateTodayDate();
-        this.newsDataService.retrieveCustomSearchWithPageNumber(searchValue,date,1).subscribe( response =>{
-            this.commonService.prePopulateSearchedNews(response);
+        this.newsDataService.retrieveNews(searchValue).subscribe( response =>{
+            this.commonService.prePopulateNews(response, 'world');
             this._initializeNews();
             this.showMostViewed = true;
             this.dialogRef.close();

@@ -4,19 +4,19 @@ import { BusinessComponent } from './businessComponent/businessComponent.compone
 import { TechnologyComponent } from './technologyComponent/technologyComponent.component';
 import { PoliticsComponent } from './politicsComponent/politicsComponent.component';
 import { MostPopularComponent } from './mostPopularComponent/mostPopular.component';
-import { MovieReviewsComponent } from './movieReviewsComponent/movieReviewsComponent.component';
 import { SearchComponent } from './search/search.component';
-import { EconomyComponent } from './economy/economy.component';
+import { WorldComponent } from './world/world.component';
+import { OtherNewsComponent } from './otherNewsComponent/otherNewsComponent.component';
 
 
 const routes: Routes = [
   {path:'business',component:BusinessComponent},
-  {path:'economy',component:EconomyComponent},
+  {path:'world',component:WorldComponent},
   {path:'technology',component:TechnologyComponent},
   {path:'politics',component:PoliticsComponent},
   {path:'search',component:SearchComponent},
   {path:'mostPopular',component:MostPopularComponent},
-  {path:'movieReviews',component:MovieReviewsComponent},
+  {path:'otherNews',component:OtherNewsComponent},
   {path:'', pathMatch:'full', redirectTo:'business'},
   {path:'**', redirectTo:'business'},
 ];

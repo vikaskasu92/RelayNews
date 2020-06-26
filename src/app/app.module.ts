@@ -22,7 +22,6 @@ import { BusinessComponent } from './businessComponent/businessComponent.compone
 import { TechnologyComponent } from './technologyComponent/technologyComponent.component';
 import { PoliticsComponent } from './politicsComponent/politicsComponent.component';
 import { MostPopularComponent } from './mostPopularComponent/mostPopular.component';
-import { MovieReviewsComponent } from './movieReviewsComponent/movieReviewsComponent.component';
 import { NewsContentComponent } from './shared/components/newsContentComponent/newsContentComponent.component';
 import { ComponentHeadingComponent } from './shared/components/componentHeading/componentHeading.component';
 import { MostViewedComponent } from './shared/components/mostViewedComponent/mostViewedComponent.component';
@@ -30,8 +29,9 @@ import { LoadingDialog } from './shared/dialogs/loadingDialog/loadingDialog.comp
 import { MoreNewsDialog } from './shared/dialogs/moreNewsDialog/moreNewsDialog.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
-import { EconomyComponent } from './economy/economy.component';
 import { SearchResultsComponent } from './search/searchResults/searchResults.component';
+import { WorldComponent } from './world/world.component';
+import { OtherNewsComponent } from './otherNewsComponent/otherNewsComponent.component';
 
 
 @NgModule({
@@ -45,14 +45,14 @@ import { SearchResultsComponent } from './search/searchResults/searchResults.com
     TechnologyComponent,
     PoliticsComponent,
     MostPopularComponent,
-    MovieReviewsComponent,
+    OtherNewsComponent,
     NewsContentComponent,
     ComponentHeadingComponent,
     MostViewedComponent,
-    EconomyComponent,
+    WorldComponent,
     SearchResultsComponent,
     LoadingDialog,
-    MoreNewsDialog
+    MoreNewsDialog,
   ],
   imports: [
     BrowserModule,

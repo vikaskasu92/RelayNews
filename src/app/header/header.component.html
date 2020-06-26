@@ -8,20 +8,20 @@
         <mat-menu #hamburgerMenu="matMenu">
             <mat-list role="list">
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('business')">Business</mat-list-item>
-                <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('economy')">Economy</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('technology')">Technology</mat-list-item>
+                <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('world')">World</mat-list-item>
                 <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('politics')">Politics</mat-list-item>
-                <!--<mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('movieReviews')">Movie Reviews</mat-list-item>-->
+                <mat-list-item role="listitem" class="mat-menu-content" (click)="openNews('otherNews')">Other News</mat-list-item>
               </mat-list>
           </mat-menu>
-        <img alt="Relay News Logo" class="img-fluid logo small-window-logo" src="../../assets/logo/relayLogo.png">
-        <h3 class="header-content-text small-window-title-margin">Relay News</h3>
+        <img alt="Relay News Logo" class="img-fluid logo small-window-logo" (click)="goHome()" src="../../assets/logo/relayLogo.png">
+        <h3 class="header-content-text small-window-title" (click)="goHome()">Relay News</h3>
         <div class="header-content-1st-button small-window-hide">
             <button mat-button class="header-content-text" (click)="openNews('business')">Business</button>
-            <button mat-button class="header-content-text" (click)="openNews('economy')">Economy</button>
             <button mat-button class="header-content-text" (click)="openNews('technology')">Technology</button>
+            <button mat-button class="header-content-text" (click)="openNews('world')">World</button>
             <button mat-button class="header-content-text" (click)="openNews('politics')">Politics</button>
-            <!--<button mat-button class="header-content-text" (click)="openNews('movieReviews')">Movie Reviews</button>-->
+            <button mat-button class="header-content-text" (click)="openNews('otherNews')">Other News</button>
         </div>
         <div class="push"></div>
         <div class="small-window-search-width">

@@ -10,6 +10,7 @@
     height: 50px;
     margin-right: -25px;
     margin-left: -25px;
+    cursor: pointer;
 }
 
 .push{
@@ -27,6 +28,7 @@
 
 .header-content-text{
     color: white;
+    cursor: pointer;
 }
 
 .mat-menu-content{
@@ -54,14 +56,16 @@ only screen and (max-width: 760px),
     .small-window-logo{
         margin-left: -4px;
         margin-right: -11px;
+        cursor: pointer;
     }
 
     .small-window-search-width{
         max-width: 24vw;
     }
 
-    .small-window-title-margin{
+    .small-window-title{
         margin-right: 20px;
+        cursor: pointer;
     }
 
 }

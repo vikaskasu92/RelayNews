@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NewsDataService } from '../shared/newsData.service';
 
 @Component({
-    selector:'app-movieReviewsComponent',
-    templateUrl:'./movieReviewsComponent.component.html',
-    styleUrls:['./movieReviewsComponent.component.css']
+    selector:'app-otherNewsComponent',
+    templateUrl:'./otherNewsComponent.component.html',
+    styleUrls:['./otherNewsComponent.component.css']
 })
-export class MovieReviewsComponent implements OnInit{
+export class OtherNewsComponent implements OnInit{
 
     constructor(private newsDataService:NewsDataService){}
 

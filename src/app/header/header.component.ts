@@ -51,6 +51,10 @@ export class HeaderComponent{
         }
     }
 
+    goHome(){
+        this.router.navigate(['/business']);
+    }
+
     private _callSearchTriggerSequence(response:any){
         this.common.searchResponse = response;
         this.common.searchSubscriptionCalled = false;
