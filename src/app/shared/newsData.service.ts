@@ -11,7 +11,7 @@ export class NewsDataService{
     }
 
     retrieveCustomSearchWithPageNumber(searchValue:string,today:number,pageNumber:number){
-        return this.http.get<any>("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchValue+"&begin_date="+today+"&sort=newest&page="+pageNumber+"&api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
+        return this.http.get<any>("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchValue+"&sort=newest&page="+pageNumber+"&api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
     }
 
     retrieveNews(newsType:string){

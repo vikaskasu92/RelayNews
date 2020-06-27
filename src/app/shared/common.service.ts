@@ -156,8 +156,10 @@ export class CommonService{
                 }else if((+currentMin - +newsMin) === 1){
                     return '1 min ago';
                 }else{
-                    return this._checkForModulus(+currentMin - +newsMin) +' mins ago';
+                    return this._checkForModulus(+currentMin - +newsMin) +' mins ago ';
                 }
+            }else if((+currentHour - +newsHour) === 1){
+                return '1 hour ago';
             }else{
                 return this._checkForModulus(+currentHour - +newsHour) +' hours ago';
             }
