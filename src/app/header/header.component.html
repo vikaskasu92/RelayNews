@@ -27,7 +27,7 @@
         <div class="small-window-search-width">
             <mat-form-field class="small-window-search-width">
                 <mat-label></mat-label>
-                <input matInput class="text-color" [(ngModel)]="searchContentValue" (ngModelChange)="searchTyped()" placeholder="Search Relay News">
+                <input matInput class="text-color" [(ngModel)]="searchContentValue" (ngModelChange)="searchTyped()" (keyup.enter)="searchContent()" placeholder="Search Relay News">
             </mat-form-field>
         </div>
         <div class="search-icon">
