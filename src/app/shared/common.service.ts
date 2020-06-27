@@ -103,7 +103,7 @@ export class CommonService{
         } 
         newsResponse.time = response.response.docs[i].pub_date;
         if(response.response.docs[i].pub_date != null){
-            newsResponse.time = response.response.docs[i].pub_date.substring(0,10);
+            newsResponse.time = this._calculateTime( response.response.docs[i].pub_date.substring(11,19),response.response.docs[i].pub_date.substring(8,10),response.response.docs[i].pub_date.substring(0,10));
         }
         newsResponse.url = response.response.docs[i].web_url;
         newsResponse.abstract = response.response.docs[i].abstract;
@@ -124,7 +124,7 @@ export class CommonService{
         } 
         newsResponse.time = response.response.docs[i].pub_date;
         if(response.response.docs[i].pub_date != null){
-            newsResponse.time = response.response.docs[i].pub_date.substring(0,10);
+            newsResponse.time = this._calculateTime( response.response.docs[i].pub_date.substring(11,19),response.response.docs[i].pub_date.substring(8,10),response.response.docs[i].pub_date.substring(0,10));
         }
         newsResponse.url = response.response.docs[i].web_url;
         newsResponse.abstract = response.response.docs[i].abstract;
@@ -136,11 +136,41 @@ export class CommonService{
             newsResponse.title = response.results[i].title;
             newsResponse.author = response.results[i].byline.substring(2);
             newsResponse.photo = response.results[i].multimedia[0].url;
-            newsResponse.time = response.results[i].created_date.substring(0,10);
+             newsResponse.time = this._calculateTime( response.results[i].created_date.substring(11,19),response.results[i].created_date.substring(8,10),response.results[i].created_date.substring(0,10));
             newsResponse.url = response.results[i].short_url;
             newsResponse.abstract = response.results[i].abstract;
             this._pushToArrays(newsResponse);
         }
+    }
+
+    private _calculateTime(newsTime:string, newsDate:string, actualDate:string){
+        let today = new Date().getDate();
+        if(newsDate === today.toString()){
+            let currentHour = new Date().toTimeString().substring(0,2);
+            let currentMin = new Date().toTimeString().substring(3,5);
+            let newsHour = newsTime.substring(0,2);
+            let newsMin = newsTime.substring(3,5)
+            if(currentHour === newsHour){
+                if(currentMin === newsMin){
+                    return 'Just Now';
+                }else if((+currentMin - +newsMin) === 1){
+                    return '1 min ago';
+                }else{
+                    return this._checkForModulus(+currentMin - +newsMin) +' mins ago';
+                }
+            }else{
+                return this._checkForModulus(+currentHour - +newsHour) +' hours ago';
+            }
+        }else{
+            return actualDate;
+        }
+    }
+
+    private _checkForModulus(time:number){
+        if (time < 0) {
+            time = time * -1;
+        }
+        return time;
     }
 
     private _pushToArrays(newsResponse:NewsContent){
