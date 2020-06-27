@@ -46,5 +46,5 @@ export class NewsContentComponent implements OnInit{
             const dialogRef = this.commonService.openDialog(this.matDialog,MoreNewsDialog,data);
         }
     }
-
+    
 }
