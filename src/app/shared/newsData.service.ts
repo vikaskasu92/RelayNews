@@ -19,7 +19,7 @@ export class NewsDataService{
     }
 
     retrieveMostViewedNews(){
-        return this.http.get<any>("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
+        return this.http.get<any>("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=S3Ol3vRvGC57LinpKOkTWqXW3MtncQb8");
     }
 
     retrieveMovieReviews(movieName:string){
